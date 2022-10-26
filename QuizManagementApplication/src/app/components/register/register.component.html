@@ -107,7 +107,7 @@ a{
 <body>
 	<h1 style="text-align: center; color: white;">SignUp Here</h1>
 
-	<form [formGroup]="creatRegister" (ngSubmit)="onSubmit()">
+	<form (ngSubmit)="onSubmit()">
 		<ul>
 			<li><label>UserName:</label> <input type='text' name='username' formControlName="email" required="required"/></li>
 			<li><label>Password :</label> <input type='password' name='password' formControlName="password" required="required"/></li>

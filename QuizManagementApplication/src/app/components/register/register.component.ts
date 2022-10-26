@@ -12,15 +12,14 @@ export class RegisterComponent implements OnInit {
 
   constructor(public http:HttpClient,private router:Router) { }
 
-  creatRegister =new FormGroup({
-    roll: new FormControl(''),
-    email:new FormControl(''),
-    password:new FormControl('')
-  })
+  // creatRegister =new FormGroup({
+  //   roll: new FormControl(''),
+  //   email:new FormControl(''),
+  //   password:new FormControl('')
+  // })
 
   onSubmit(){
     this.router.navigate(['home']);
-    
   }
   ngOnInit(): void {
   }

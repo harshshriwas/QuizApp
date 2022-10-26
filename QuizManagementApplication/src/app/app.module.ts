@@ -12,7 +12,7 @@ import { CategoryComponent } from './components/category/category.component';
 import { QuizComponent } from './components/quiz/quiz.component';
 import { AddcategoryComponent } from './components/addcategory/addcategory.component';
 import { AddQuizComponent } from './components/add-quiz/add-quiz.component';
-import { ViewQuestionsComponent } from './components/view-questions/view-questions.component';
+import { ViewQuestionComponent } from './components/view-question/view-question.component';
 
 
 @NgModule({
@@ -25,7 +25,7 @@ import { ViewQuestionsComponent } from './components/view-questions/view-questio
     QuizComponent,
     AddcategoryComponent,
     AddQuizComponent,
-    ViewQuestionsComponent,
+    ViewQuestionComponent,
   ],
   imports: [
     BrowserModule,

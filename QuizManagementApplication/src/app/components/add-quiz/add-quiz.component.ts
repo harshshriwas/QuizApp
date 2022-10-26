@@ -18,8 +18,10 @@ export class AddQuizComponent implements OnInit {
     qdescription:new FormControl(''),
     maxMarks:new FormControl(''),
     numberOfQuestion: new FormControl(''),
-    category_cid:new FormControl('')
-  })
+    // category: { 
+    //   cid: new FormControl('')
+    // },
+  });
 
 
   ngOnInit(): void {
@@ -48,13 +50,13 @@ export class AddQuizComponent implements OnInit {
   addQuizInfo()
   {
     console.log(this.creatQuiz);
-    this.http.post<any>('http://localhost:8080/addquiz',this.creatQuiz.value).subscribe(
-      response=>{
-        //console.log(response);
-        alert("Submited");
-        this.router.navigate(['home/quiz']);
-      }
-    );
+    // this.http.post<any>('http://localhost:8080/addquiz',this.creatQuiz.value).subscribe(
+    //   response=>{
+    //     //console.log(response);
+    //     alert("Submited");
+    //     this.router.navigate(['home/quiz']);
+    //   }
+    // );
   }
 
 }

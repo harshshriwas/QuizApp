@@ -1,0 +1,18 @@
+<body>
+    <a routerLink="/home/add-quiz">ADD Questions</a>
+    <h2 style="text-align: center;">Questions of {{qTittle}}</h2>
+    <div *ngFor="let questions of questions">
+        <div class="card" >
+            <h4>{{questions.content}}</h4>
+           
+            <label for="">{{questions.option1}}</label>
+            <input type="radio" name="" id="" value="{{questions.option1}}">
+            <label for="">{{questions.option2}}</label>
+            <input type="radio" name="" id="" value="{{questions.option2}}">
+            <label for="">{{questions.option3}}</label>
+            <input type="radio" name="" id="" value="{{questions.option3}}">
+            <label for="">{{questions.option4}}</label>
+            <input type="radio" name="" id="" value="{{questions.option4}}"> 
+        </div>
+    </div>
+</body>

@@ -44,10 +44,10 @@
 
             <div>
                 <div class="col-25">
-                    <label for="country">Country</label>
+                    <label for="country">Category</label>
                 </div>
                 <div class="col-75" >
-                    <select  formControlName="category_cid" >
+                    <select  formControlName="category.cid" >
                         <option *ngFor="let category of category" value={{category.cid}}>{{category.tittle}}</option>
                     </select>
                 </div>

@@ -18,10 +18,10 @@ export class LoginComponent implements OnInit {
     
   }
 
-  loginResult =new FormGroup({
-    email: new FormControl(''),
-    password:new FormControl(''),
-  })
+  // loginResult =new FormGroup({
+  //   email: new FormControl(''),
+  //   password:new FormControl(''),
+  // })
 
   getResultByRollno() {
     alert("Login Successfull")

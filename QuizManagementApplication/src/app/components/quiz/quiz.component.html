@@ -2,10 +2,11 @@
     <a routerLink="/home/add-quiz">ADD Quiz</a>
     
     <div *ngFor="let quiz of quiz">
+        
         <div class="card" >
             <h4>{{quiz.qtittle}}</h4>
             <p>{{quiz.qdescription}}</p>
-            <a href="">Questions</a>
+            <a [routerLink]="['/home/view-question/'+ quiz.qid + '/' + quiz.qtittle ]">Questions</a>
             <a style="background-color: #fff; color:black;">Max Marks: {{quiz.maxMarks}}</a>
             <a style="background-color: #fff; color:black;">Questions: {{quiz.numberOfQuestion}}</a>
             <a href="">Update</a>
