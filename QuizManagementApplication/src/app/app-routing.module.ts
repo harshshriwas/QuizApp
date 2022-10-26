@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { QuizComponent } from './components/quiz/quiz.component';
 import { RegisterComponent } from './components/register/register.component';
+import { ViewQuestionsComponent } from './components/view-questions/view-questions.component';
 
 const routes: Routes = [
   {path:"login", component:LoginComponent,pathMatch:"full"},
@@ -18,7 +19,8 @@ const routes: Routes = [
       {path:"category", component:CategoryComponent},
       { path:"quiz",component:QuizComponent },
       {path:"addcategory", component:AddcategoryComponent},
-      {path:"add-quiz", component: AddQuizComponent}
+      {path:"add-quiz", component: AddQuizComponent},
+      {path:"view-question", component: ViewQuestionsComponent}
     ]
   },
  // {path:"category", component:CategoryComponent, pathMatch:'full'}
