@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+  display: flex;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 155px;
+  overflow: hidden;
+  background: #080640;
+  color: black;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  width: 120px;
+  padding: 14px 16px;
+  text-decoration: none;
+  border: 2px solid rgba(247, 206, 3, 0.938);
+}
+
+li a:hover:not(.active) {
+  background: rgba(247, 206, 3, 0.938);
+}
+
+</style>
+</head>
+<body>
+  <div>
+    <ul>
+      <li><a routerLink="/home/category">Category</a></li>
+      <li><a routerLink="/home/quiz">Quiz</a></li>
+      <li><a routerLink="/home/addcategory">ADD Category</a></li>
+      <li><a routerLink="/">CSS</a></li>
+      <li><a routerLink="/">C/C++</a></li>
+      <li><a routerLink="/">JavaScript</a></li>
+      <li><a routerLink="/">NodeJS</a></li>
+    </ul>
+  </div>
+
+
+<div>
+  <router-outlet></router-outlet>
+</div>
+
+
+</body>
+</html>

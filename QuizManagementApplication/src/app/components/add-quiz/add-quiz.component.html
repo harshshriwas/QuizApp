@@ -1,0 +1,62 @@
+<div class="container center">
+    <form [formGroup]="creatQuiz" (ngSubmit)="onSubmit()">
+        <h2 style="text-align: center;">Add Quiz</h2>
+        <div class="row">
+            <div class="col-25">
+                <label for="fname">Enter Tittle</label>
+            </div>
+            <div class="col-75">
+                <input type="text" placeholder="Enter Tittle"  formControlName="qtittle">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label for="subject">Quiz Description</label>
+            </div>
+            <div class="col-75">
+                <textarea  formControlName="qdescription" placeholder="Write something.." style="height:100px" ></textarea>
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-25">
+              <label for="fname">Maximum Marks</label>
+            </div>
+            <div class="col-75">
+              <input type="number"  formControlName="maxMarks" placeholder="Maximum Marks">
+            </div>
+          </div>
+        <br>
+
+        <div class="row">
+            <div class="col-25">
+              <label for="fname">No OF Questions</label>
+            </div>
+            <div class="col-75">
+              <input type="number"  formControlName="numberOfQuestion" placeholder="No of Questions">
+            </div>
+          </div>
+          <br>
+
+        <div class="row">
+
+            <div>
+                <div class="col-25">
+                    <label for="country">Country</label>
+                </div>
+                <div class="col-75" >
+                    <select  formControlName="category_cid" >
+                        <option *ngFor="let category of category" value={{category.cid}}>{{category.tittle}}</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <input class="btn" style="margin-top: 23px;" type="submit" value="Submit">
+        </div>
+    </form>
+</div>

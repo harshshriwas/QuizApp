@@ -1,0 +1,20 @@
+.card{
+    border-radius: 23px;
+    display: block;
+    margin: 25px;
+    background: #080640;
+    color: white;
+    border: 6px solid rgb(247 206 3 / 94%);
+    padding: 0px 25px 28px 25px;
+}
+a{
+    border: 2px solid #f1f1f1;
+    background: rgb(247 206 3 / 94%);
+    margin: 4px;
+    padding: 9px 30px 11px 30px;
+    border-radius: 23px;
+    color: #f1f1f1;
+    text-decoration: none;
+    font-weight: bold;
+
+}

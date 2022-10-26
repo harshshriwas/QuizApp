@@ -1,0 +1,16 @@
+.card{
+    border-radius: 23px;
+    display: block;
+    margin: 4px 5px 12px 26px;
+    background: #080640;
+    color: white;
+    border: 6px solid rgb(247 206 3 / 94%);
+    padding: 0px 25px 0px 25px;
+}
+.back{
+    width: 1000px;
+    height: auto;
+    /* background: aquamarine; */
+    /* width: 709px; */
+    border: 2px solid red;
+}
