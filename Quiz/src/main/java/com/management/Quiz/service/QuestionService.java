@@ -1,6 +1,7 @@
 package com.management.Quiz.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +21,17 @@ public class QuestionService {
   }
   
   public Questions updateQuestion(Questions question) {
-    return questionRepository.save(question);
+   
+    Questions existingQuestion = questionRepository.findById(question.getQuesId()).get();
+
+    existingQuestion.setContent(question.getContent());
+    existingQuestion.setOption1(question.getOption1());
+    existingQuestion.setOption2(question.getOption2());
+    existingQuestion.setOption3(question.getOption3());
+    existingQuestion.setOption4(question.getOption4());
+    existingQuestion.setAnswer(question.getAnswer());
+    existingQuestion.setQuiz(question.getQuiz());
+    return questionRepository.save(existingQuestion);
   }
 
   public List<Questions> getAllQuiz() {

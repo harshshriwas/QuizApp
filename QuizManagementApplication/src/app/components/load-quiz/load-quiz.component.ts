@@ -1,15 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-quiz',
-  templateUrl: './quiz.component.html',
-  styleUrls: ['./quiz.component.css']
+  selector: 'app-load-quiz',
+  templateUrl: './load-quiz.component.html',
+  styleUrls: ['./load-quiz.component.css']
 })
-export class QuizComponent implements OnInit {
+export class LoadQuizComponent implements OnInit {
 
   quiz : Quiz[] = [];
-  constructor(public http:HttpClient) { }
+  q: any;
+
+  constructor(public http:HttpClient, private router:Router) { }
 
   ngOnInit(): void {
     this.getAllQuiz();
@@ -28,21 +31,13 @@ export class QuizComponent implements OnInit {
     );
   }
 
-    //delte leave details
-    deleteQuiz(id:number){
-      console.log(id);
-      var confim = confirm("Do you want to delete");
-      if(confim)
-      {
-         this.http.delete<any>('http://localhost:8080/deleteQuiz/'+id).subscribe(
-         response=>{
-          alert("Deleted Successfully!..")
-          this.ngOnInit();
-         }
-       );
-      }
+  startQuiz(id: any, title: any){
+    var yes = confirm("Do You Want to Start Quiz");
+    
+    if(yes){
+      this.router.navigate(['/user-dashboard/startquiz/'+id+'/'+title])
     }
-
+  }
 }
 
 export interface Quiz {

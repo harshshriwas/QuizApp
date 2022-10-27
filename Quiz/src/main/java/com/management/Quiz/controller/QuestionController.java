@@ -50,17 +50,17 @@ public class QuestionController {
     return question;
   }
   
-  @RequestMapping(value = "/question/{questionId}", method = RequestMethod.GET)
+  @RequestMapping(value = "/questions/{questionId}", method = RequestMethod.GET)
   public Questions getQuestionById(@PathVariable("questionId") Integer questionId) {
     return questionService.getQuestionById(questionId);
   }
   
-  @RequestMapping(value = "/delete/{questionId}", method = RequestMethod.GET)
-  public void deleteQuestionById(@PathVariable("questionId") Integer questionId) {
+  @RequestMapping(value="/deleteQuestion/{quesId}", method = RequestMethod.DELETE)
+  public void deleteQuestionById(@PathVariable("quesId") Integer questionId) {
     questionService.deleteQuestionById(questionId);
   }
   
-  @RequestMapping(value = "/update/question", method = RequestMethod.PUT)
+  @RequestMapping(value = "/updateQuestion", method = RequestMethod.PUT)
   public Questions updateQuestionById(@RequestBody Questions question) {
     return questionService.updateQuestion(question);
   }

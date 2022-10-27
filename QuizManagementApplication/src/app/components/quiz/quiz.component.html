@@ -9,8 +9,8 @@
             <a [routerLink]="['/home/view-question/'+ quiz.qid + '/' + quiz.qtittle ]">Questions</a>
             <a style="background-color: #fff; color:black;">Max Marks: {{quiz.maxMarks}}</a>
             <a style="background-color: #fff; color:black;">Questions: {{quiz.numberOfQuestion}}</a>
-            <a href="">Update</a>
-            <a style="background-color: crimson; color:#fff;">Delete</a>
+            <a [routerLink]="['/home/update-quiz/'+quiz.qid]">Update</a>
+            <a (click)="deleteQuiz(quiz.qid)"  style="background-color: crimson; color:#fff;">Delete</a>
         </div>
     </div>
 </body>

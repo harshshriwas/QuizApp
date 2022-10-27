@@ -36,12 +36,12 @@ public class QuizController {
     return quizService.getQuizById(quizId);
   }
   
-  @RequestMapping(value = "/delete/{quizId}", method = RequestMethod.DELETE)
+  @RequestMapping(value = "/deleteQuiz/{quizId}", method = RequestMethod.DELETE)
   public void deleteQuizById(@PathVariable("quizId") Integer quizId) {
     quizService.deleteQuizById(quizId);
   }
   
-  @RequestMapping(value = "/update", method = RequestMethod.PUT)
+  @RequestMapping(value = "/updateQuiz", method = RequestMethod.PUT)
   public Quiz updateQuizById(@RequestBody Quiz quiz) {
     return quizService.updateQuiz(quiz);
   }

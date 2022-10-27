@@ -38,12 +38,12 @@ public class CategoryController {
     return categoryService.getCategoryById(categoryId);
   }
   
-  @RequestMapping(value = "/category/{categoryId}", method = RequestMethod.DELETE)
+  @RequestMapping(value = "/deleteCategory/{categoryId}", method = RequestMethod.DELETE)
   public void deleteCategoryById(@PathVariable("categoryId") Integer categoryId) {
      categoryService.deleteCategoryById(categoryId);
   }
   
-  @RequestMapping(value = "/update/category", method = RequestMethod.PUT)
+  @RequestMapping(value = "/updateCategory", method = RequestMethod.PUT)
   public Category updateCategoryById(@RequestBody Category category) {
     return categoryService.updateCategory(category);
   }

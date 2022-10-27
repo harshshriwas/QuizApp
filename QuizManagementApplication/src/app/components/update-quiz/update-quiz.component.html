@@ -1,6 +1,6 @@
 <div class="container center">
-    <form [formGroup]="creatQuiz" (ngSubmit)="onSubmit()">
-        <h2 style="text-align: center;">Add Quiz</h2>
+    <form  [formGroup]="updateQuiz" (ngSubmit)="onSubmit()">
+        <h2 style="text-align: center;">Update Quiz</h2>
         <div class="row">
             <div class="col-25">
                 <label for="fname">Enter Tittle</label>
@@ -48,7 +48,7 @@
                 </div>
                 <div class="col-75" formGroupName="category">
                     <select formControlName="cid">
-                        <option *ngFor="let category of category" value={{category.cid}}>{{category.tittle}}</option>
+                         <option *ngFor="let category of category" value={{category.cid}}>{{category.tittle}}</option> -->
                     </select>
                 </div>
             </div>
@@ -57,6 +57,8 @@
 
         <div class="row">
             <input class="btn" style="margin-top: 23px;" type="submit" value="Submit">
+            <br>
+            <input class="btn" style="margin-top: 23px;" type="reset" value="Reset">
         </div>
     </form>
 </div>

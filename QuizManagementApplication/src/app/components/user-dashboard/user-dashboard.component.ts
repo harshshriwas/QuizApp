@@ -2,12 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-category',
-  templateUrl: './category.component.html',
-  styleUrls: ['./category.component.css']
+  selector: 'app-user-dashboard',
+  templateUrl: './user-dashboard.component.html',
+  styleUrls: ['./user-dashboard.component.css']
 })
-export class CategoryComponent implements OnInit {
-  
+export class UserDashboardComponent implements OnInit {
+
   category : Category[] = [];
   constructor(public http:HttpClient) { }
 
@@ -28,21 +28,6 @@ export class CategoryComponent implements OnInit {
     );
   }
 
-    //delte leave details
-    deleteCategory(id:number){
-      console.log(id);
-      var confim = confirm("Do you want to delete");
-      if(confim)
-      {
-         this.http.delete<any>('http://localhost:8080/deleteCategory/'+id).subscribe(
-         response=>{
-          alert("Deleted Successfully!..")
-          this.ngOnInit();
-         }
-       );
-      }
-    }
-
 }
 
 export interface Category {
@@ -52,3 +37,4 @@ export interface Category {
   description: string;
   
 }
+

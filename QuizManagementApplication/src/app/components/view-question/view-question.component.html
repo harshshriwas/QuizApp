@@ -1,18 +1,21 @@
 <body>
-    <a routerLink="/home/add-quiz">ADD Questions</a>
+    <a [routerLink]="'/home/add-question/'+ qId" >ADD Questions</a>
+
     <h2 style="text-align: center;">Questions of {{qTittle}}</h2>
-    <div *ngFor="let questions of questions">
-        <div class="card" >
-            <h4>{{questions.content}}</h4>
-           
-            <label for="">{{questions.option1}}</label>
-            <input type="radio" name="" id="" value="{{questions.option1}}">
-            <label for="">{{questions.option2}}</label>
-            <input type="radio" name="" id="" value="{{questions.option2}}">
-            <label for="">{{questions.option3}}</label>
-            <input type="radio" name="" id="" value="{{questions.option3}}">
-            <label for="">{{questions.option4}}</label>
-            <input type="radio" name="" id="" value="{{questions.option4}}"> 
+    <div *ngFor="let questions of questions let i = index">
+        <div class="card">
+
+            <h3>Q {{i+1}}) {{questions.content}}</h3>
+            <br>
+            <span>1) {{questions.option1}}</span><br>
+            <span>2) {{questions.option2}}</span><br>
+            <span>3) {{questions.option3}}</span><br>
+            <span>4) {{questions.option4}}</span><br>
+            <hr>
+            <h4 style="color: rgb(247 206 3 / 94%);">Correct Answer = {{questions.answer}} {{questions.quesId}}</h4>
+            <br>
+            <a [routerLink]="['/home/update-question/'+questions.quesId]" style="background-color: rgb(247 206 3 / 94%); color: white; font-weight: bold;">Update</a>
+            <a (click)="deleteResult(questions.quesId)" style="background-color: crimson; color: white; font-weight: bold;">Delete</a>
         </div>
     </div>
 </body>

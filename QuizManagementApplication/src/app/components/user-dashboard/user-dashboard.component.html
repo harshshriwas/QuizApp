@@ -38,17 +38,13 @@ li a:hover:not(.active) {
 </head>
 <body>
   <div>
-    <ul>
-      <li><a routerLink="/home/category">Category</a></li>
-      <li><a routerLink="/home/quiz">Quiz</a></li>
-      <li><a routerLink="/home/addcategory">ADD Category</a></li>
-      <li><a routerLink="/user-dashboard">User</a></li>
+    <ul *ngFor="let c of category">
+      <li><a routerLink="/user-dashboard">ALL</a></li>
     </ul>
   </div>
 
 
-<div>
-  <h1 style="text-align: center;">Welcome to Admin Home</h1>
+<div>   
   <router-outlet></router-outlet>
 </div>
 

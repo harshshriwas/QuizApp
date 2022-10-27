@@ -1,0 +1,18 @@
+<body>
+    
+    <h2 style="text-align: center;">Questions of {{qTittle}}</h2>
+    <div *ngFor="let questions of questions let i = index">
+        <div class="card">
+
+            <h3>Q {{i+1}}) {{questions.content}}</h3>
+            <br>
+            <span><input type="radio"   [value]="questions.option1" name="i" [(ngModel)]="questions.givenAnswer"> {{questions.option1}}</span><br>
+            <span><input type="radio"   [value]="questions.option2" name="i" [(ngModel)]="questions.givenAnswer">{{questions.option2}}</span><br>
+            <span><input type="radio"   [value]="questions.option3" name="i" [(ngModel)]="questions.givenAnswer">{{questions.option3}}</span><br>
+            <span><input type="radio"   [value]="questions.option4" name="i" [(ngModel)]="questions.givenAnswer">{{questions.option4}}</span><br>
+            
+            
+        </div>
+    </div>
+    <a type="submit">Submit</a>
+</body>

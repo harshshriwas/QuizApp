@@ -35,11 +35,26 @@ export class ViewQuestionComponent implements OnInit {
     );
   }
 
+  //delte leave details
+  deleteResult(id:number){
+    console.log(id);
+    var confim = confirm("Do you want to delete");
+    if(confim)
+    {
+       this.http.delete<any>('http://localhost:8080/deleteQuestion/'+id).subscribe(
+       response=>{
+        alert("Deleted Successfully!..")
+        this.ngOnInit();
+       }
+     );
+    }
+  }
+
 }
 
 export interface Questions {
  
-  ques_id : number,
+  quesId : number,
   answer : string,
   content : string,
   option1 : string,

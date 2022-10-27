@@ -13,6 +13,13 @@ import { QuizComponent } from './components/quiz/quiz.component';
 import { AddcategoryComponent } from './components/addcategory/addcategory.component';
 import { AddQuizComponent } from './components/add-quiz/add-quiz.component';
 import { ViewQuestionComponent } from './components/view-question/view-question.component';
+import { AddQuestionComponent } from './components/add-question/add-question.component';
+import { UpdateQuestionComponent } from './components/update-question/update-question.component';
+import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
+import { LoadQuizComponent } from './components/load-quiz/load-quiz.component';
+import { StartquizComponent } from './components/startquiz/startquiz.component';
+import { UpdateQuizComponent } from './components/update-quiz/update-quiz.component';
+import { UpdateCategoryComponent } from './components/update-category/update-category.component';
 
 
 @NgModule({
@@ -26,6 +33,13 @@ import { ViewQuestionComponent } from './components/view-question/view-question.
     AddcategoryComponent,
     AddQuizComponent,
     ViewQuestionComponent,
+    AddQuestionComponent,
+    UpdateQuestionComponent,
+    UserDashboardComponent,
+    LoadQuizComponent,
+    StartquizComponent,
+    UpdateQuizComponent,
+    UpdateCategoryComponent,
   ],
   imports: [
     BrowserModule,

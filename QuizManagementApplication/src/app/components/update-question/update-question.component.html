@@ -1,0 +1,69 @@
+<div class="container center">
+    <form [formGroup]="updateQuestion" (ngSubmit)="onSubmit()">
+        <h2 style="text-align: center;">Update Questions</h2>
+        
+        <div class="row">
+            <div class="col-25">
+                <label for="subject">Question</label>
+            </div>
+            <div class="col-75">
+                <textarea   name="content" formControlName="content"  placeholder="Write something.." style="height:80px" ></textarea>
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-25">
+                <label for="fname">Option1</label>
+            </div>
+            <div class="col-75">
+                <input type="text" formControlName="option1" name="option1" placeholder="Enter Tittle" >
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-25">
+                <label for="fname">Option2</label>
+            </div>
+            <div class="col-75">
+                <input type="text" formControlName="option2" name="option1" placeholder="Enter Tittle" >
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-25">
+                <label for="fname">Option3</label>
+            </div>
+            <div class="col-75">
+                <input type="text" formControlName="option3"  name="option1" placeholder="Enter Tittle" >
+            </div>
+        </div>
+          <br>
+
+          <div class="row">
+            <div class="col-25">
+                <label for="fname">Option4</label>
+            </div>
+            <div class="col-75">
+                <input type="text" formControlName="option4" name="option4" placeholder="Enter Tittle" >
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label for="fname">Correct Answer</label>
+            </div>
+            <div class="col-75">
+                <input type="text" formControlName="answer" placeholder="Enter Tittle" >
+            </div>
+        </div>
+
+        <div class="row">
+            <input class="btn" style="margin-top: 23px; font-weight: bold;" type="submit" value="ADD">
+
+            <input class="btn" style="margin-top: 23px; font-weight: bold;" type="reset" value="Reset">
+        </div>
+    </form>
+</div>

@@ -4,8 +4,11 @@
             <h3>
                 {{c.tittle}}
             </h3>
-            <p>{{c.description}}      
-        </p>
+            <p>{{c.description}}</p>
+        
+            <a [routerLink]="['/home/update-category/'+c.cid]">Update</a>
+        <a style="background-color: crimson; color: #fff; font-weight: bold;" (click)="deleteCategory(c.cid)" >Delete</a>
        </div>
+       
     </div>
 </body>
