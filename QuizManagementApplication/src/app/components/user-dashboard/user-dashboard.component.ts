@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { LoginServiceService } from '../login-service.service';
 
 @Component({
   selector: 'app-user-dashboard',
@@ -9,7 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class UserDashboardComponent implements OnInit {
 
   category : Category[] = [];
-  constructor(public http:HttpClient) { }
+  constructor(public http:HttpClient, public login:LoginServiceService) { }
+
+
+  public logout()
+  {
+   localStorage.clear();
+    this.login.logout();
+  }
 
   ngOnInit(): void {
     this.getAllCategory();

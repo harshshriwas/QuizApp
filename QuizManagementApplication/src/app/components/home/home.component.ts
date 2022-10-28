@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginServiceService } from '../login-service.service';
 
 @Component({
   selector: 'app-home',
@@ -9,10 +10,16 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public login:LoginServiceService) { }
 
   ngOnInit(): void {
     
+  }
+
+  public logout()
+  {
+   localStorage.clear();
+    this.login.logout();
   }
 
 }
