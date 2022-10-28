@@ -31,7 +31,9 @@ public class UserService {
 
   // login
   public Users userLogin(Users user) {
+    System.out.print(user.getEmail()+"   "+ user.getPassword());
     Users userinfo =  userRepository.getByEmailPassword(user.getEmail(), user.getPassword());
+   
     if(userinfo != null)
     {
       return userinfo;
