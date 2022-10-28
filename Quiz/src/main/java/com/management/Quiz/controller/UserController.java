@@ -17,7 +17,7 @@ public class UserController {
   @Autowired
   private UserService userService;
 
-  @RequestMapping(value = "/register", method = RequestMethod.POST)
+  @RequestMapping(value = "/registerUser", method = RequestMethod.POST)
   public Users registerUser(@RequestBody Users user) {
     System.out.println(user.getEmail());
     return userService.createUser(user);
