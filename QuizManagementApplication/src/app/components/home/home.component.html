@@ -42,7 +42,7 @@ li a:hover:not(.active) {
       <li><a routerLink="/home/category">Category</a></li>
       <li><a routerLink="/home/quiz">Quiz</a></li>
       <li><a routerLink="/home/addcategory">ADD Category</a></li>
-      <li><a routerLink="/user-dashboard">User</a></li>
+      <li><a (click)="logout()" *ngIf="login.isLoggedIn()">Logout</a></li>
     </ul>
   </div>
 

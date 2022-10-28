@@ -20,7 +20,16 @@ export class UserDashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.preventBackButton();
     this.getAllCategory();
+  }
+
+  preventBackButton(){
+    history.pushState(null, document.title, location.href);
+    window.addEventListener('popstate', function (event)
+    {
+      history.pushState(null, document.title, location.href);
+    });
   }
 
   getAllCategory()

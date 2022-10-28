@@ -13,7 +13,15 @@ export class HomeComponent implements OnInit {
   constructor(public login:LoginServiceService) { }
 
   ngOnInit(): void {
-    
+    this.preventBackButton();
+  }
+
+  preventBackButton(){
+    history.pushState(null, document.title, location.href);
+    window.addEventListener('popstate', function (event)
+    {
+      history.pushState(null, document.title, location.href);
+    });
   }
 
   public logout()
