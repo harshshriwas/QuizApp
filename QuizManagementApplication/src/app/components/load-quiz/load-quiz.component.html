@@ -6,7 +6,7 @@
             <h4>{{quiz.qtittle}}</h4>
             <p>{{quiz.qdescription}}</p>
             <!-- <a href="">View</a> -->
-            <a style="background-color: crimson; color:#fff;" (click)="startQuiz(quiz.qid,quiz.qtittle)">Start</a>
+            <a style="background-color: crimson; color:#fff;" (click)="startQuiz(quiz.qid,quiz.qtittle,quiz.maxMarks)">Start</a>
             <a>NO Of Question : {{quiz.numberOfQuestion}}</a>
             <a>Maximum Marks : {{quiz.maxMarks}}</a>
         </div>

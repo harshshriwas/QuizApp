@@ -1,18 +1,59 @@
 <body>
-    
-    <h2 style="text-align: center;">Questions of {{qTittle}}</h2>
-    <div *ngFor="let questions of questions let i = index">
+    <div *ngIf="!isSubmit">
+        <h2 style="text-align: center;">Questions of {{qTittle}}</h2>
+    <div *ngFor="let question of questions; let i = index;" >
         <div class="card">
 
-            <h3>Q {{i+1}}) {{questions.content}}</h3>
+            <h3>Q {{i+1}}) {{question.content}}</h3>
             <br>
-            <span><input type="radio"   [value]="questions.option1" name="i" [(ngModel)]="questions.givenAnswer"> {{questions.option1}}</span><br>
-            <span><input type="radio"   [value]="questions.option2" name="i" [(ngModel)]="questions.givenAnswer">{{questions.option2}}</span><br>
-            <span><input type="radio"   [value]="questions.option3" name="i" [(ngModel)]="questions.givenAnswer">{{questions.option3}}</span><br>
-            <span><input type="radio"   [value]="questions.option4" name="i" [(ngModel)]="questions.givenAnswer">{{questions.option4}}</span><br>
+            <span>
+                <input type="radio" 
+                value={{question.option1}}
+                [(ngModel)]="question.givenAnswer"
+                [name]="question.answer"
+                >{{question.option1}}</span><br>
+            <span>
+                <input type="radio"  
+                value={{question.option2}}
+                [name]="question.answer"
+                [(ngModel)]="question.givenAnswer"
+                 >{{question.option2}}</span><br>
+            <span>
+                <input type="radio"  
+                value={{question.option3}}
+                [name]="question.answer"
+                [(ngModel)]="question.givenAnswer"
+                >{{question.option3}}</span><br>
+            <span>
+                <input type="radio"   
+                value={{question.option4}}
+                [name]="question.answer"
+                [(ngModel)]="question.givenAnswer"
+                >{{question.option4}}</span><br>
             
-            
+            your Answer = {{question.givenAnswer}}
         </div>
     </div>
-    <a type="submit">Submit</a>
+    <a type="submit" (click)="onsubmit()">Submit</a>
+    </div>
+    
+
+
+
+    <!-- show result -->
+    <div *ngIf="isSubmit">
+            <div>
+                <div class="card" >
+                    <h2>Quiz Result</h2>
+                    <br>
+                    <h5>Marks Got : <b> {{marksGot}}  </b> </h5>
+                    <br>
+                    <h5>Correct Answer : <b>{{correctAnswers}}</b> </h5>
+                    <br>
+                    <h5>Question Attemted : <b> {{attempted}} </b></h5>
+                    <br>
+                    
+                </div>
+            </div>
+    </div>
 </body>

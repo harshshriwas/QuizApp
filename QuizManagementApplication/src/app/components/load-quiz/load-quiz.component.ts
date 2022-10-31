@@ -31,11 +31,11 @@ export class LoadQuizComponent implements OnInit {
     );
   }
 
-  startQuiz(id: any, title: any){
+  startQuiz(id: any, title: any, maxMarks:any){
     var yes = confirm("Do You Want to Start Quiz");
     
     if(yes){
-      this.router.navigate(['/user-dashboard/startquiz/'+id+'/'+title])
+      this.router.navigate(['/user-dashboard/startquiz/'+id+'/'+title+'/'+maxMarks])
     }
   }
 }

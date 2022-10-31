@@ -43,7 +43,7 @@ const routes: Routes = [
     canActivate:[NormalguardGuard],
     children:[
       {path:"", component: LoadQuizComponent, canActivate:[NormalguardGuard]},
-      {path:"startquiz/:id/:tittle", component: StartquizComponent, canActivate:[NormalguardGuard]}
+      {path:"startquiz/:id/:tittle/:maxMarks", component: StartquizComponent, canActivate:[NormalguardGuard]}
     ]
   }
  // {path:"category", component:CategoryComponent, pathMatch:'full'}
