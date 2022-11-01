@@ -109,10 +109,10 @@ a{
 
 	<form [formGroup]="creatRegister" (ngSubmit)="onSubmit()">
 		<ul>
-			<li><label>Email:</label> <input type='text' name='username' formControlName="email" required/></li>
+			<li><label>Email:</label> <input type='email' name='username' formControlName="email" required/></li>
 			<li><label>Password :</label> <input type='password' name='password' formControlName="password" required/></li>
 
-			<li><label>Name:</label> <input type='text' name='username' formControlName="name" required="required"/></li>
+			<li><label>Name:</label> <input type='text' name='username' formControlName="name" required=/></li>
 			<li><label>Phone No:</label> <input type='text' name='username' formControlName="phonenumber" required/></li>
 			<li><label for="roll">Choose a role:</label>
 				<input type="radio" formControlName="role" class="rad" value="ADMIN"/>

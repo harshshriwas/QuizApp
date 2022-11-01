@@ -7,7 +7,7 @@
                 <label for="subject">Question</label>
             </div>
             <div class="col-75">
-                <textarea [(ngModel)]="question.content" name="content"  placeholder="Write something.." style="height:80px" ></textarea>
+                <textarea [(ngModel)]="question.content" name="content"  placeholder="Write something.." style="height:80px" required></textarea>
             </div>
         </div>
         <br>
@@ -17,7 +17,7 @@
                 <label for="fname">Option1</label>
             </div>
             <div class="col-75">
-                <input type="text" [(ngModel)]="question.option1" name="option1" placeholder="Enter Tittle" >
+                <input type="text" [(ngModel)]="question.option1" name="option1" placeholder="Enter Tittle" required>
             </div>
         </div>
         <br>
@@ -27,17 +27,17 @@
                 <label for="fname">Option2</label>
             </div>
             <div class="col-75">
-                <input type="text" [(ngModel)]="question.option2" name="option1" placeholder="Enter Tittle" >
+                <input type="text" [(ngModel)]="question.option2" name="option1" placeholder="Enter Tittle" required>
             </div>
         </div>
-        <br>
+        <br>required
 
         <div class="row">
             <div class="col-25">
                 <label for="fname">Option3</label>
             </div>
             <div class="col-75">
-                <input type="text" [(ngModel)]="question.option3" name="option1" placeholder="Enter Tittle" >
+                <input type="text" [(ngModel)]="question.option3" name="option1" placeholder="Enter Tittle" required>
             </div>
         </div>
           <br>
@@ -47,7 +47,7 @@
                 <label for="fname">Option4</label>
             </div>
             <div class="col-75">
-                <input type="text" [(ngModel)]="question.option4" name="option4" placeholder="Enter Tittle" >
+                <input type="text" [(ngModel)]="question.option4" name="option4" placeholder="Enter Tittle" required>
             </div>
         </div>
 
@@ -56,7 +56,7 @@
                 <label for="fname">Correct Answer</label>
             </div>
             <div class="col-75">
-                <input type="text" [(ngModel)]="question.answer" name="answer" placeholder="Enter Tittle" >
+                <input type="text" [(ngModel)]="question.answer" name="answer" placeholder="Enter Tittle" required>
             </div>
         </div>
 
