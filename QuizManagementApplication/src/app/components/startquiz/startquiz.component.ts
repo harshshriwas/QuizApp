@@ -13,6 +13,7 @@ export class StartquizComponent implements OnInit {
   qid: any;
   qTittle: any;
   maxMarks:any;
+  timer: any;
 
   isSubmit= false;
 
@@ -47,9 +48,11 @@ export class StartquizComponent implements OnInit {
       (response)=>{
         console.log(response)
         this.questions = response;
+        this.timer = this.questions.length*2*60;
         this.questions.forEach((q)=>{
             q['givenAnswer'];
         });
+        this.startTimer();
       },
       (error)=>{
         console.log("Error in gating data");
@@ -61,23 +64,42 @@ export class StartquizComponent implements OnInit {
    let yes = confirm("Do You Want To Sumbit Quiz");
    
    if(yes){
-    this.isSubmit = true;
-     this.questions.forEach((q)=>{
-        if(q.givenAnswer == q.answer){
-          this.correctAnswers++;
-          let marksSingle = this.maxMarks / this.questions.length;
-          this.marksGot += marksSingle;
-        }
-
-        if(q.givenAnswer.trim() !=''){
-          this.attempted++;
-        }
-     })
-     console.log("Correct Answer "+ this.correctAnswers);
-     console.log("Marks Got = "+ this.marksGot);
-     console.log("Attempted = "+ this.attempted);
+    this.evalQuiz()
    }
+  }
+  evalQuiz() {
+    this.isSubmit = true;
+    this.questions.forEach((q)=>{
+       if(q.givenAnswer == q.answer){
+         this.correctAnswers++;
+         let marksSingle = this.maxMarks / this.questions.length;
+         this.marksGot += marksSingle;
+       }
 
+       if(q.givenAnswer !=''){
+         this.attempted++;
+       }
+    })
+    console.log("Correct Answer "+ this.correctAnswers);
+    console.log("Marks Got = "+ this.marksGot);
+    console.log("Attempted = "+ this.attempted);
+  }
+
+  startTimer(){
+    let t = window.setInterval(()=>{
+      if(this.timer<=0){
+        this.evalQuiz();
+        clearInterval(t);
+      }else{
+        this.timer--;
+      }
+    },1000)
+  }
+
+  getFormattedTime(){
+    let mm = Math.floor(this.timer/60);
+    let ss = this.timer - mm*60
+    return `${mm} min : ${ss} sec`
   }
 }
 

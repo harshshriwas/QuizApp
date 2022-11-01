@@ -9,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class QuizComponent implements OnInit {
 
   quiz : Quiz[] = [];
+
+
   constructor(public http:HttpClient) { }
 
   ngOnInit(): void {
@@ -27,6 +29,7 @@ export class QuizComponent implements OnInit {
       }
     );
   }
+
 
     //delte leave details
     deleteQuiz(id:number){
@@ -54,3 +57,4 @@ export interface Quiz {
   numberOfQuestion : number,
   
 }
+

@@ -20,7 +20,8 @@ import { LoadQuizComponent } from './components/load-quiz/load-quiz.component';
 import { StartquizComponent } from './components/startquiz/startquiz.component';
 import { UpdateQuizComponent } from './components/update-quiz/update-quiz.component';
 import { UpdateCategoryComponent } from './components/update-category/update-category.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,9 @@ import { UpdateCategoryComponent } from './components/update-category/update-cat
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,5 @@
 <body>
-    <a [routerLink]="'/home/add-question/'+ qId" >ADD Questions</a>
+    <a [routerLink]="'/home/add-question/'+ qId + '/'+ qTittle" >ADD Questions</a>
 
     <h2 style="text-align: center;">Questions of {{qTittle}}</h2>
     <div *ngFor="let questions of questions let i = index">
@@ -14,7 +14,7 @@
             <hr>
             <h4 style="color: rgb(247 206 3 / 94%);">Correct Answer = {{questions.answer}} {{questions.quesId}}</h4>
             <br>
-            <a [routerLink]="['/home/update-question/'+questions.quesId]" style="background-color: rgb(247 206 3 / 94%); color: white; font-weight: bold;">Update</a>
+            <a [routerLink]="['/home/update-question/'+questions.quesId+'/'+ qTittle]" style="background-color: rgb(247 206 3 / 94%); color: white; font-weight: bold;">Update</a>
             <a (click)="deleteResult(questions.quesId)" style="background-color: crimson; color: white; font-weight: bold;">Delete</a>
         </div>
     </div>

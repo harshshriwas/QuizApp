@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-update-question',
@@ -11,8 +11,9 @@ import { ActivatedRoute } from '@angular/router';
 export class UpdateQuestionComponent implements OnInit {
 
   qId: any;
+  qTittle: any;
 
-  constructor(public http: HttpClient, private route: ActivatedRoute) { }
+  constructor(public http: HttpClient, private route: ActivatedRoute, private router:Router) { }
 
   updateQuestion = new FormGroup({
     quesId: new FormControl(''),
@@ -29,6 +30,7 @@ export class UpdateQuestionComponent implements OnInit {
 
   ngOnInit(): void {
     this.qId = this.route.snapshot.params['id'];
+    this.qTittle = this.route.snapshot.params['tittle'];
     this.getQuestions();
   }
 

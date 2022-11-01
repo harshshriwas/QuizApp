@@ -18,3 +18,7 @@ a{
     font-weight: bold;
 
 }
+
+mat-spinner svg{
+    height: 70px;
+}

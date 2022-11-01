@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-update-category',
@@ -12,7 +12,7 @@ export class UpdateCategoryComponent implements OnInit {
 
   qId: any;
 
-  constructor(public http: HttpClient, private route: ActivatedRoute) { }
+  constructor(public http: HttpClient, private route: ActivatedRoute,  private router:Router) { }
 
   creatCategory =new FormGroup({
     cid:new FormControl(''),
@@ -53,6 +53,8 @@ export class UpdateCategoryComponent implements OnInit {
     this.http.put<any>('http://localhost:8080/updateCategory',this.creatCategory.value).subscribe(
       response=>{
         alert("Submited");
+        this.router.navigate(['/home/category']);
+        
       }, (error)=>{
       alert("error in updating data");
     }

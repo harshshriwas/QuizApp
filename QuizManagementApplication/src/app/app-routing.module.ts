@@ -31,8 +31,8 @@ const routes: Routes = [
       {path:"addcategory", component:AddcategoryComponent, },
       {path:"add-quiz", component: AddQuizComponent,},
       {path:"view-question/:id/:tittle", component:ViewQuestionComponent , },
-      {path:"add-question/:id", component:AddQuestionComponent,},
-      {path:"update-question/:id", component:UpdateQuestionComponent,},
+      {path:"add-question/:id/:tittle", component:AddQuestionComponent,},
+      {path:"update-question/:id/:tittle", component:UpdateQuestionComponent,},
       {path:"update-quiz/:id", component:UpdateQuizComponent,},
       {path:"update-category/:id", component:UpdateCategoryComponent,},
     ]

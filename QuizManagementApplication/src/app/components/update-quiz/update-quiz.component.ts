@@ -73,6 +73,7 @@ export class UpdateQuizComponent implements OnInit {
     this.http.put<any>('http://localhost:8080/updateQuiz',this.updateQuiz.value).subscribe(
       response=>{
         alert("Submited");
+        this.router.navigate(['/home/quiz']);
       }, (error)=>{
       alert("error in updating data");
     }

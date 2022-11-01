@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,8 +13,8 @@ export class AddcategoryComponent implements OnInit {
   constructor(public http:HttpClient, private router:Router) { }
 
   creatCategory =new FormGroup({
-    tittle: new FormControl(''),
-    description:new FormControl(''),
+    tittle: new FormControl('', Validators.required),
+    description:new FormControl('', Validators.required),
   })
 
   ngOnInit(): void {

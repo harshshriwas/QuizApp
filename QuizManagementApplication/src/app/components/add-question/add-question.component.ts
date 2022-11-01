@@ -12,6 +12,7 @@ import { VirtualTimeScheduler } from 'rxjs';
 export class AddQuestionComponent implements OnInit {
 
   qid: any;
+  qTittle: any;
   constructor(public http:HttpClient, private route: ActivatedRoute,private router:Router) { }
 
   question ={
@@ -29,6 +30,7 @@ export class AddQuestionComponent implements OnInit {
 
   ngOnInit(): void {
     this.qid = this.route.snapshot.params['id'];
+    this.qTittle = this.route.snapshot.params['tittle'];
     this.question.quiz.qid = this.qid;
   }
   
@@ -43,6 +45,7 @@ export class AddQuestionComponent implements OnInit {
     this.http.post<any>('http://localhost:8080/addquestion',this.question).subscribe(
       response=>{
         alert("Submited");
+        this.router.navigate(['/home/view-question/'+ this.qid +'/'+this.qTittle]);
       }
     );
   }

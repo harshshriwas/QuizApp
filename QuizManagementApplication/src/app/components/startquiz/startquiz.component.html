@@ -1,5 +1,16 @@
 <body>
     <div *ngIf="!isSubmit">
+        <div style="padding: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: antiquewhite;
+        border-radius: 167px;">
+            <h2>Progress</h2><br>
+            <h3>{{ getFormattedTime() }}</h3>
+            <mat-spinner mode="determinate" [value]="(timer / (this.questions.length*2*60))*100"></mat-spinner>
+        </div>
         <h2 style="text-align: center;">Questions of {{qTittle}}</h2>
     <div *ngFor="let question of questions; let i = index;" >
         <div class="card">
@@ -31,20 +42,21 @@
                 [(ngModel)]="question.givenAnswer"
                 >{{question.option4}}</span><br>
             
-            your Answer = {{question.givenAnswer}}
+           
         </div>
     </div>
     <a type="submit" (click)="onsubmit()">Submit</a>
+    
     </div>
     
 
 
 
     <!-- show result -->
-    <div *ngIf="isSubmit">
+    <div *ngIf="isSubmit" style="width: 300px; text-align: center;">
             <div>
                 <div class="card" >
-                    <h2>Quiz Result</h2>
+                    <h1>Quiz Result</h1>
                     <br>
                     <h5>Marks Got : <b> {{marksGot}}  </b> </h5>
                     <br>

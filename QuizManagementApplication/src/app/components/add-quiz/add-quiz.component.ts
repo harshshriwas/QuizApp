@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,10 +14,10 @@ export class AddQuizComponent implements OnInit {
   constructor(public http:HttpClient, private router:Router) { }
 
   creatQuiz =new FormGroup({
-    qtittle: new FormControl(''),
-    qdescription:new FormControl(''),
-    maxMarks:new FormControl(''),
-    numberOfQuestion: new FormControl(''),
+    qtittle: new FormControl('', Validators.required),
+    qdescription:new FormControl('', Validators.required),
+    maxMarks:new FormControl('', Validators.required),
+    numberOfQuestion: new FormControl('', Validators.required),
     category :  new FormGroup({
       cid: new FormControl(''),
     })
